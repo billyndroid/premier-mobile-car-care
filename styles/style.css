@@ -94,9 +94,10 @@ a:active {
 .heroContainer h1 {
     color: var(--secondary-color);
     text-align: left;
-    font-size: 4vw; /* Default size for larger screens */
+    font-size: 8vw; /* Default size for larger screens */
     margin: 0;
     font-weight: 600;
+    line-height: 75%;
 }
 
 .heroContainer h3 {
@@ -742,5 +743,79 @@ svg {
 .matrixContainer {
     overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
+
+/* ...existing code... */
+
+.services-section .itemOuter {
+    cursor: pointer;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+    max-height: 50px; /* Initially show only the heading */
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--secondary-color); /* Ensure background color is applied */
+    color: var(--primary-color); /* Text color */
+}
+
+.services-section .itemOuter h3 {
+    margin: 0;
+    color: var(--primary-color); /* Ensure heading color is preserved */
+}
+
+.services-section .itemOuter.expanded {
+    max-height: 500px; /* Adjust based on content size */
+    padding: 20px;
+    background-color: var(--highlight-color); /* Change background color when expanded */
+    color: var(--secondary-color); /* Change text color when expanded */
+}
+
+.services-section .itemOuter p,
+.services-section .itemOuter ul {
+    display: none;
+    color: var(--primary-color); /* Ensure text color is preserved */
+}
+
+.services-section .itemOuter.expanded p,
+.services-section .itemOuter.expanded ul {
+    display: block;
+    color: var(--secondary-color); /* Change text color when expanded */
+}
+.services-section .itemOuter.expanded {
+    background: linear-gradient((to bottom right, deg 45, orange, white);
+
+    color: white;
+}
+
+/* Ensure headings and additional content are visible */
+.services-section .itemOuter h3,
+.services-section .itemOuter .additional-content {
+    display: block;
+}
+
+/* Pricing Section Styles */
+
+.pricing-section h2 {
+    font-size: 1.5rem; /* Match the service matrix h2 font size */
+    font-weight: 600;  /* Match the service matrix h2 font weight */
+}
+
+@keyframes expandFromCenter {
+    0% {
+        transform: scale(0);
+        opacity
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-expand {
+    animation: expandFromCenter 1s ease-out;
+}
+/* ...existing code... */
+
 
 /* End of styles/style.css */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier Mobile Car Care</title>
+    <title>PREMIER MOBILE Car Care</title>
     <meta name="keywords" content="Car, Valet, Detailing, Cleaning, Maintenance, Mobile, Service, Cardiff, Newport, Bridgend, RCT, Swansea, South Wales">
     <meta name="description" content="Premier Mobile Car Care provides top-quality, convenient car detailing and maintenance services at your doorstep.">
     <meta name="author" content="Premier Mobile Car Care">
@@ -22,9 +22,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!--<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">-->
+    <style>
+        @keyframes expandFromCenter {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
 
+        .animate-expand {
+            animation: expandFromCenter 1s ease-out;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,7 +57,7 @@
 
     <section class="hero">
         <div class="heroContainer">
-            <h1>Premier Mobile</h1>
+            <h1>PREMIER MOBILE</h1>
             <h1>Car Care</h1>
             <h3>Providing top-quality, convenient car detailing and maintenance services at your doorstep.</h3>
             <button id="contact-btn" type="button">Contact Us</button>
@@ -59,9 +74,20 @@
             <img src="/assets/pexels-jarne-aerts-3175149-5693651 (1).png" alt="A car being cleaned">
         </div>
     </section>
+<!--CTA section-->
+<section class="container2 animate-expand">
+    <div id="cta" class="animate-expand">
+        <div id="content">
+            <div class="text">
+                <h4>Book Now!</h4>
+                <h5>Call to secure appointment during busy periods</h5>
+            </div>
+            <div class="buttonToo"></div>
+        </div>     
+    </div>
+</section>
 
-
-    <section class="interiorMatrix">
+    <section id="matrix-container" class="interiorMatrix">
         <h2>Service Matrix</h2>
         <p>Compare our services</p>
         <div class="matrixContainer">
@@ -100,7 +126,7 @@
                         <td>✔</td>
                     </tr>
                     <tr>
-                        <td>Shampoo</td>
+                        <td>Contact Wash/Shampoo</td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -109,7 +135,7 @@
                         <td>✔</td>
                     </tr>
                     <tr>
-                        <td>Drying</td>
+                        <td>Drying Process</td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -120,7 +146,7 @@
                     <tr>
                         <td>Foam Pre-Wash +</td>
                         <td></td>
-                        <td></td>
+                        <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -140,8 +166,8 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>✔</td>
+                        <td>✔</td>
                         <td>✔</td>
                     </tr>
                     <tr>
@@ -159,7 +185,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>✔</td>
+                        <td></td>
                         <td>✔</td>
                     </tr>
                     <tr>
@@ -167,7 +193,7 @@
                     </tr>
                     <tr>
                         <td>Vacuum</td>
-                        <td>✔</td>
+                        <td></td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -177,7 +203,7 @@
                     <tr>
                         <td>Vacuum/Polish</td>
                         <td></td>
-                        <td>✔</td>
+                        <td></td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -187,7 +213,7 @@
                         <td>Interior Detail</td>
                         <td></td>
                         <td></td>
-                        <td>✔</td>
+                        <td></td>
                         <td>✔</td>
                         <td>✔</td>
                         <td>✔</td>
@@ -197,7 +223,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>✔</td>
+                        <td></td>
                         <td>✔</td>
                         <td>✔</td>
                     </tr>
@@ -268,6 +294,18 @@
         </ul>
         <button>Book</button>
     </div>
+    <div class="itemOuter">
+        <h3>Other Services</h3>
+        <p>Call for Info</p>
+        <ul>
+            <li>Select Polishing</li>
+            <li>Ceramic Coat</li>
+            <li>Clay Bar - Removes tarmac</li>
+            <li>Polishing - Coming soon</li>
+            
+        </ul>
+        <button>Book</button>
+    </div>
 </section>
 
 
@@ -276,32 +314,38 @@
     <h2>Our Services</h2>
     <div class="itemOuter">
         <h3>Pre-wash & Exterior Cleaning</h3>
-        <p>Remove loose dirt and contaminants before touching the paint to prevent scraches</p>
-        <p>Using a pH-balanced pre-wash cleaner and foam cannon, follwed with wash mitts using a "two-bucket" method.</p>
+        <p><i>Remove loose dirt and contaminants before touching the paint to prevent scraches</i></p>
+        <p>Using a pH-balanced pre-wash cleaner and foam cannon, followed up with wash mitts and detail brushes</p>
     </div>
     <div class="itemOuter">
         <h3>Wheels & Tyres</h3>
-        <p>Remove brake dust, grime and restore shine</p>
+        
+        <p><i>Remove brake dust, grime and restore shine</i></p>
         <p>Using a professional grade, acid-free wheel cleaner, for delicate rims, followed by detail brushes and a professional tyre dressing.</p>
     </div>
     <div class="itemOuter">
-        <h3>Pre-wash & Exterior Cleaning</h3>
-        <p>Remove loose dirt and contaminants before touching the paint to prevent scraches</p>
+        <h3>Contact Wash/Shampoo</h3>
+        <p><i>Hand wash using safe techniques to clean the paint without scratching</i></p>
+        <p>Using spcialist car shampoo and wash mitts </p>
+    </div>
+    <div class="itemOuter">
+        <h3>Paint Decontamination</h3>
+        <p><i>Remove loose dirt and contaminants before touching the paint to prevent scraches</i></p>
         <p>Using a pH-balanced pre-wash cleaner and foam cannon, follwed with wash mitts using a "two-bucket" method.</p>
     </div>
     <div class="itemOuter">
-        <h3>Pre-wash & Exterior Cleaning</h3>
-        <p>Remove loose dirt and contaminants before touching the paint to prevent scraches</p>
+        <h3>Drying Process</h3>
+        <p><i>Remove loose dirt and contaminants before touching the paint to prevent scraches</i></p>
         <p>Using a pH-balanced pre-wash cleaner and foam cannon, follwed with wash mitts using a "two-bucket" method.</p>
     </div>
     <div class="itemOuter">
-        <h3>Pre-wash & Exterior Cleaning</h3>
-        <p>Remove loose dirt and contaminants before touching the paint to prevent scraches</p>
+        <h3>Paint Correction</h3>
+        <p><i>Remove loose dirt and contaminants before touching the paint to prevent scraches</i></p>
         <p>Using a pH-balanced pre-wash cleaner and foam cannon, follwed with wash mitts using a "two-bucket" method.</p>
     </div>
 </section>
 
-
+<!--
     <section class="container">
         <h2>About Us</h2>
         <div class="itemOuter">
@@ -321,7 +365,7 @@
             <p>This is some subtext under an illustration or image</p>
         </div>
     </section>
-
+-->
     <section id="quote">
         <p>Top quality and friendly service. Arrived with full professional kit and got to work. Car looks great and I didn't have to leave the house.</p>
         <h2 id="strongText"><strong>-Emma M. Caerphilly</strong></h2>
@@ -332,9 +376,9 @@
         <p>Booked a slot mid-week so I don't have to wait in a long queue at the weekend - in my free time. Service was great. No hassle and very convenient.</p>
         <h2 id="strongText"><strong>-Sophie L. Bridgend</strong></h2>
     </section>
-
-    <section class="container2">
-        <div id="cta">
+<!--CTA section-->
+    <section class="container2 animate-expand">
+        <div id="cta" class="animate-expand">
             <div id="content">
                 <div class="text">
                     <h4>Book Now!</h4>
@@ -345,7 +389,7 @@
         </div>
     </section>
 
-    <section class="container3">
+   <!-- <section class="container3">
         <div class="itemOuter">
             <img src="/assets/placeholder150.svg" alt="Service illustration">
             <p>This is some subtext under an illustration or image</p>
@@ -363,6 +407,7 @@
             <p>This is some subtext under an illustration or image</p>
         </div>
     </section>
+-->
   
     <section class="footer">
         <div class="footerContainer">
@@ -395,7 +440,7 @@
     <section id="footerLogoContainer">
         <img src="assets/logofix.png" alt="Footer Logo" id="footerLogo"/>
     </section>
-    <section class="Responsive Matrix Chart">
+  <!--  <section class="Responsive Matrix Chart">
         <div class="container mx-auto p-4">
             <h1 class="text-2xl font-bold mb-4">My Matrix Chart</h1>
             
@@ -403,8 +448,9 @@
             <div id="matrix-container"></div>
         </div>
     
-        <!-- Include the JavaScript file -->
-        <script src="matrix-chart.js"></script>
+        <!-- Matrix Re-sizing for small screens --> 
+    -->
+       <!--<script src="matrix-chart.js"></script>-->
     </section>
     <script src="/scripts/script.js"></script>
 </body>

@@ -13,7 +13,9 @@ class ResponsiveMatrixChart {
                     { label: 'Row 1', values: [10, 15, 20, 25] },
                     { label: 'Row 2', values: [30, 35, 40, 45] },
                     { label: 'Row 3', values: [50, 55, 60, 65] },
-                    { label: 'Row 4', values: [70, 75, 80, 85] }
+                    { label: 'Row 4', values: [70, 75, 80, 85] },
+                    { label: 'Row 5', values: [90, 95, 100, 105] },
+                    
                 ]
             },
             
@@ -169,11 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
     new ResponsiveMatrixChart({
         target: '#matrix-container',
         data: {
-            headers: ['Q1', 'Q2', 'Q3', 'Q4'],
+            headers: ['Standard', 'Mini Valet', 'Bronze', 'Silver', 'Gold'],
             rows: [
-                { label: 'Sales', values: [1000, 1200, 1500, 1800] },
-                { label: 'Expenses', values: [800, 900, 1000, 1100] },
-                { label: 'Profit', values: [200, 300, 500, 700] }
+                { label: 'Prewash', values: [U+2713, 1200, 1500, 1800] },
+                { label: 'Wheels & Tyres', values: [800, 900, 1000, 1100] },
+                { label: 'Shampoo', values: [200, 300, 500, 700] },
+                { label: 'Polish', values: [400, 500, 600, 700] },
+                { label: 'Wax', values: [300, 400, 500, 600] },
+                { label: 'Interior', values: [600, 700, 800, 900] },
+                { label: 'Engine', values: [500, 600, 700, 800] }
             ]
         }
     });
