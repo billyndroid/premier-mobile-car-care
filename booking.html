@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier Mobile Car Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="assets/Untitled-1@0.25x.png" alt="Header Logo" class="logo"/> 
+
+            <ul>
+                <li><a href="one.html">Services</a></li>
+                <li><a href="two.html">Testimonials</a></li>
+                <li><a href="three.html">Booking</a></li>
+                <li><a href="three.html">Info</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <!-- Calendar Booking System -->
+    <section class="booking-system">
+        <h2>Book Your Appointment</h2>
+        <div class="calendar">
+            <!-- Calendar will be generated here by JavaScript -->
+        </div>
+        <div class="date-selection">
+            <h3>Select a Date</h3>
+            <input type="date" id="appointment-date">
+        </div>
+        <div class="time-slots">
+            <h3>Select a Time Slot</h3>
+            <select id="time-slot">
+                <option value="7:00">7:00 AM</option>
+                <option value="8:00">8:00 AM</option>
+                <option value="9:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+                <option value="17:00">5:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="20:00">8:00 PM</option>
+            </select>
+        </div>
+        <button id="book-appointment">Book Appointment</button>
+    </section>
+
+    <section class="footer">
+        <div class="footerContainer">
+            <div class="footerItem">
+                <h4>Services</h4>
+                <ul>
+                    <li>Car Detailing</li>
+                    <li>Car Maintenance</li>
+                    <li>Car Cleaning</li>
+                </ul>
+            </div>
+            <div class="footerItem">
+                <h4>Company</h4>
+                <ul>
+                    <li>About</li>
+                    <li>Testimonials</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footerItem">
+                <h4>Legal</h4>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Call/email to book a valet today
+    </footer>
+    
+    <script src="/scripts/script.js"></script>
+    <script src="scripts/booking.js"></script>
+</body>
+</html>

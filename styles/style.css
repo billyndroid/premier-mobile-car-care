@@ -9,6 +9,7 @@
     --border-color: #d4af37;
     --quote-bg-color: #e5e7eb;
     --quote-text-color: #1f2937;
+    --modal-overlay-color: rgba(0, 0, 0, 0.8);
 }
 
 html {
@@ -26,7 +27,7 @@ body {
 
 /* Header Section */
 .logo {
-    max-width: 5%;
+    max-width: 10%;
     height: auto;
     padding: 20px;
     display: block;
@@ -93,7 +94,7 @@ a:active {
 .heroContainer h1 {
     color: var(--secondary-color);
     text-align: left;
-    font-size: 3vw;
+    font-size: 4vw; /* Default size for larger screens */
     margin: 0;
     font-weight: 600;
 }
@@ -123,7 +124,6 @@ a:active {
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .heroImage img {
@@ -143,31 +143,94 @@ a:active {
     padding: 50px 0;
 }
 
+.container.services-section {
+    position: relative;
+    background-color: var(--primary-color); /* Navy blue background */
+    color: var(--secondary-color); /* White text */
+    padding: 50px 0;
+    text-align: center;
+    background-image: url('../assets/pexels-jarne-aerts-3175149-5693651 (1).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 55, 0.8); /* Navy blue overlay with opacity */
+    z-index: 1;
+}
+
+.container.services-section > * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
 .container h2 {
     width: 100%;
     margin-bottom: 30px;
 }
 
 .itemOuter {
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     margin: 20px;
-    width: 150px;
+    width: 250px;
     height: auto;
-    border: 4px solid var(--border-color);
+    border: 2px solid var(--border-color);
     background: var(--secondary-color);
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .itemOuter:hover {
-    transform: scale(1.05) rotate(3deg);
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .itemOuter img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.itemOuter h3 {
+    margin: 15px 0;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.itemOuter p {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.itemOuter button {
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.itemOuter button:hover {
+    background-color: var(--hover-color);
 }
 
 /* Quote Section */
@@ -250,6 +313,41 @@ footer {
     padding: 40px;
 }
 
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+.footerItem {
+    margin: 20px;
+    padding: 10px;
+}
+
+.footerItem h4 {
+    font-size: 20px;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+.footerItem ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerItem li {
+    margin: 5px 0;
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+.footerItem li:hover {
+    color: var(--highlight-color);
+    cursor: pointer;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero, #content {
@@ -260,6 +358,10 @@ footer {
     .heroContainer {
         align-items: center; /* Center the hero container */
         text-align: center; /* Center text inside the hero container */
+    }
+
+    .heroContainer h1 {
+        font-size: 6vw; /* Larger size for medium screens */
     }
 
     .heroImage {
@@ -283,6 +385,26 @@ footer {
     #quote {
         font-size: 24px;
         padding: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroContainer h1 {
+        font-size: 8vw; /* Largest size for small screens */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
+
+    .image-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        max-width: 300px;
     }
 }
 
@@ -327,34 +449,6 @@ footer {
     object-fit: cover;
 }
 
-/* Responsive breakpoints */
-@media screen and (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 10px;
-    }
-
-    .image-container {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .image-grid {
-        grid-template-columns: 1fr;
-        grid-gap: 15px;
-    }
-
-    .image-flex {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-container {
-        max-width: 300px;
-    }
-}
-
 /* Centering contents of container3 */
 .container3 {
     display: flex;
@@ -374,7 +468,7 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: var(--modal-overlay-color);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -425,3 +519,228 @@ footer {
 .modal.show-modal .modal-content {
     transform: scale(1);
 }
+
+#footerLogo {
+    max-width: 8%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#footerLogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+  }
+  .message-box {
+    height: 200px;
+    width: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: 50px;
+    color: #FFF;
+  }
+
+  .buttons-con .action-link-wrap {
+    margin-top: 40px;
+  }
+  .buttons-con .action-link-wrap a {
+    background: #d4af37;
+    padding: 8px 25px;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px
+  }
+  .buttons-con .action-link-wrap a:hover {
+    background: #1f2937;
+    color: #fff;
+  }
+  
+  #Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
+    animation: float 1s infinite ease-in-out alternate;
+  }
+  #Polygon-2 {
+    animation-delay: .2s; 
+  }
+  #Polygon-3 {
+    animation-delay: .4s; 
+  }
+  #Polygon-4 {
+    animation-delay: .6s; 
+  }
+  #Polygon-5 {
+    animation-delay: .8s; 
+  }
+  
+  @keyframes float {
+      100% {
+      transform: translateY(20px);
+    }
+  }
+  @media (max-width: 450px) {
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -250px;
+      margin-left: -190px;
+    }
+    .message-box {
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -190px;
+      text-align: center;
+    }
+  }
+
+/* Service Matrix Section */
+.serviceMatrix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--secondary-color); /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color); /* Gold border */
+}
+
+.serviceMatrix h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* Navy blue text */
+}
+
+.serviceMatrix p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #666; /* Neutral gray text */
+}
+
+.serviceMatrix table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.serviceMatrix th, .serviceMatrix td {
+    padding: 0.5rem; /* Reduced padding */
+    border: 1px solid var(--border-color); /* Gold border */
+    font-size: 0.85rem; /* Slightly smaller font size */
+}
+
+.serviceMatrix th {
+    background-color: var(--primary-color); /* Navy blue background */
+    color: var(--secondary-color); /* White text */
+    font-weight: bold;
+}
+
+.serviceMatrix tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light silver background */
+}
+
+.serviceMatrix tr:hover {
+    background-color: #e9e9e9; /* Slightly darker silver on hover */
+}
+
+.serviceMatrix td {
+    color: var(--primary-color); /* Navy blue text */
+}
+
+.matrixContainer {
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin: 1.618rem auto; /* Golden ratio margin */
+    padding: 1rem 1.618rem; /* Golden ratio padding */
+    max-width: 90%; /* Ensure it doesn't stretch too wide */
+}
+
+@media (max-width: 768px) {
+    .serviceMatrix table {
+        font-size: 0.8rem;
+    }
+
+    .serviceMatrix th, .serviceMatrix td {
+        padding: 0.5rem;
+    }
+}
+
+/* Interior Matrix Section */
+.interiorMatrix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--primary-color); /* Navy blue background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color); /* Gold border */
+}
+
+.interiorMatrix h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color); /* White text */
+}
+
+.interiorMatrix p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color); /* White text */
+}
+
+.interiorMatrix table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.interiorMatrix th, .interiorMatrix td {
+    padding: 0.5rem; /* Reduced padding */
+    border: 1px solid var(--border-color); /* Gold border */
+    font-size: 0.85rem; /* Slightly smaller font size */
+}
+
+.interiorMatrix th {
+    background-color: var(--highlight-color); /* Gold background */
+    color: var(--primary-color); /* Navy blue text */
+    font-weight: bold;
+}
+
+.interiorMatrix tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent white background */
+}
+
+.interiorMatrix tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker transparent white on hover */
+}
+
+.interiorMatrix td {
+    color: var(--secondary-color); /* White text */
+}
+
+.matrixContainer {
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+/* End of styles/style.css */
