@@ -265,7 +265,8 @@ a:active {
 #cta {
     border-radius: 10px;
     background-color: var(--highlight-color);
-    padding: 20px;
+    margin: 30px;
+    padding: 50px;
     width: 80%;
     max-width: 1000px;
 }
@@ -285,7 +286,26 @@ a:active {
 
 .text h4 {
     margin: 0;
-    font-size: 24px;
+    font-size: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--secondary-color);
+    animation: typing 1s steps(30, end) 0.4s forwards, blink 0.5s step-end infinite 0.4s;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
 .text h5 {
@@ -744,8 +764,7 @@ svg {
     overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
-/* ...existing code... */
-
+/* Services Section */
 .services-section .itemOuter {
     cursor: pointer;
     overflow: hidden;
@@ -782,9 +801,9 @@ svg {
     display: block;
     color: var(--secondary-color); /* Change text color when expanded */
 }
-.services-section .itemOuter.expanded {
-    background: linear-gradient((to bottom right, deg 45, orange, white);
 
+.services-section .itemOuter.expanded {
+    background: linear-gradient(to bottom right, deg 45, orange, white);
     color: white;
 }
 
@@ -795,7 +814,6 @@ svg {
 }
 
 /* Pricing Section Styles */
-
 .pricing-section h2 {
     font-size: 1.5rem; /* Match the service matrix h2 font size */
     font-weight: 600;  /* Match the service matrix h2 font weight */
@@ -804,7 +822,7 @@ svg {
 @keyframes expandFromCenter {
     0% {
         transform: scale(0);
-        opacity
+        opacity: 0;
     }
     100% {
         transform: scale(1);
@@ -815,7 +833,5 @@ svg {
 .animate-expand {
     animation: expandFromCenter 1s ease-out;
 }
-/* ...existing code... */
-
 
 /* End of styles/style.css */
