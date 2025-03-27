@@ -94,7 +94,7 @@ a:active {
 .heroContainer h1 {
     color: var(--secondary-color);
     text-align: left;
-    font-size: 8vw; /* Default size for larger screens */
+    font-size: 7vw; /* Default size for larger screens */
     margin: 0;
     font-weight: 600;
     line-height: 75%;
